@@ -42,7 +42,7 @@ mvn spring-boot:run
 ```
 - return
 ```
- http :8088/returns id="id" userId="userId" bookId="bookId" returnDate="returnDate" expireDate="expireDate " qty="qty" 
+ http :8088/returns id="id" userId="userId" bookId="bookId" returnDate="returnDate" expireDate="expireDate" qty="qty" 
 ```
 - book
 ```
