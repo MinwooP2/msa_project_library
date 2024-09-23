@@ -45,65 +45,45 @@ public class Book {
         return bookRepository;
     }
 
-    //<<< Clean Arch / Port Method
     public static void decreaseStock(BookBorrowed bookBorrowed) {
-        //implement business logic here:
+        // 사용자가 book을 borrow했을 때, 해당 book에 대한 stock을 차감시키고 
+        // 만약 차감시키지 못할 만큼 많은 양을 대출한다면 OutOfStcok 이벤트 발행 
+        repository().findById(bookBorrowed.getBookId()).ifPresent(book->{
+             if(book.getStock() >= bookBorrowed.getQty()){
+                // 재고가 충분하면 차감하고 저장 후 StockDecreased 이벤트 publish 
+                book.setStock(book.getStock() - bookBorrowed.getQty());
+                repository().save(book);
 
-        /** Example 1:  new item 
-        Book book = new Book();
-        repository().save(book);
-
-        StockDecreased stockDecreased = new StockDecreased(book);
-        stockDecreased.publishAfterCommit();
-        OutOfStock outOfStock = new OutOfStock(book);
-        outOfStock.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(bookBorrowed.get???()).ifPresent(book->{
-            
-            book // do something
-            repository().save(book);
-
-            StockDecreased stockDecreased = new StockDecreased(book);
-            stockDecreased.publishAfterCommit();
-            OutOfStock outOfStock = new OutOfStock(book);
-            outOfStock.publishAfterCommit();
-
+                StockDecreased stockDecreased = new StockDecreased(book);
+                stockDecreased.setBookId(bookBorrowed.getBookId());
+                stockDecreased.setStock(bookBorrowed.getQty());
+                stockDecreased.publishAfterCommit();
+                System.out.println("StockDecreased Event Published!!");
+            }else{
+                // 재고가 충분하지 않으면 차감하지 않고outOfStock 이벤트 publish 
+                OutOfStock outOfStock = new OutOfStock(book);
+                outOfStock.setBookId(bookBorrowed.getBookId());
+                outOfStock.publishAfterCommit();
+                System.out.println("OutOfStock Event Published!!");
+            }
          });
-        */
 
     }
 
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
     public static void increaseStock(BookReturned bookReturned) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Book book = new Book();
-        repository().save(book);
-
-        StockIncreased stockIncreased = new StockIncreased(book);
-        stockIncreased.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(bookReturned.get???()).ifPresent(book->{
-            
-            book // do something
+       repository().findById(bookReturned.getBookId()).ifPresent(book->{
+            // 재고가 충분하면 차감하고 저장 후 StockDecreased 이벤트 publish 
+            book.setStock(book.getStock() + bookReturned.getQty());
             repository().save(book);
 
             StockIncreased stockIncreased = new StockIncreased(book);
+            stockIncreased.setBookId(bookReturned.getBookId());
+            stockIncreased.setStock(bookReturned.getQty());
             stockIncreased.publishAfterCommit();
-
+            
+            System.out.println("StockIncreased Event Published!!");
          });
-        */
-
     }
-    //>>> Clean Arch / Port Method
 
 }
 //>>> DDD / Aggregate Root
