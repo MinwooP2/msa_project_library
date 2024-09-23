@@ -45,10 +45,6 @@ logging:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 
-api:
-  url: 
-    borrow: localhost:8082 
-    
 
 server:
   port: 8082
@@ -85,8 +81,4 @@ spring:
           destination: library
           contentType: application/json
 
-api:
-  url: 
-    borrow: borrow:8080 
-    
 

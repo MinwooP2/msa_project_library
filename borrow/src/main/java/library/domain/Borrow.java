@@ -48,11 +48,6 @@ public class Borrow {
 
         BookBorrowed bookBorrowed = new BookBorrowed(this);
         bookBorrowed.publishAfterCommit();
-
-        library.external.SearchBookListQuery searchBookListQuery = new library.external.SearchBookListQuery();
-        BorrowApplication.applicationContext
-            .getBean(library.external.BookService.class)
-            .searchBookList(searchBookListQuery);
     }
 
     //<<< Clean Arch / Port Method
