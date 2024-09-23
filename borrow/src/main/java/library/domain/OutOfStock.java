@@ -9,5 +9,5 @@ import lombok.*;
 @ToString
 public class OutOfStock extends AbstractEvent {
 
-    private Long id;
+    private Long bookId;
 }

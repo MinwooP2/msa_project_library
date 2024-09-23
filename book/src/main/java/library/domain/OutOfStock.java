@@ -11,7 +11,7 @@ import lombok.*;
 @ToString
 public class OutOfStock extends AbstractEvent {
 
-    private Long id;
+    private Long bookId;
 
     public OutOfStock(Book aggregate) {
         super(aggregate);

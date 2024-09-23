@@ -11,7 +11,7 @@ import lombok.*;
 @ToString
 public class StockDecreased extends AbstractEvent {
 
-    private Long id;
+    private Long bookId;
     private Integer stock;
 
     public StockDecreased(Book aggregate) {
