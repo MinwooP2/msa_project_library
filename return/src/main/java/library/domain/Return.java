@@ -31,11 +31,26 @@ public class Return {
 
     @PostPersist
     public void onPostPersist() {
+        // returned는 무조건 실행되고
         BookReturned bookReturned = new BookReturned(this);
         bookReturned.publishAfterCommit();
 
-        BookExpired bookExpired = new BookExpired(this);
-        bookExpired.publishAfterCommit();
+        // bookExpired만 연체 시기 판단해서 조건적으로 해주기
+        if (returnDate.after(expireDate)) {
+            // 연체된 경우 연체 일수를 계산
+            long diffInMillies = Math.abs(returnDate.getTime() - expireDate.getTime());
+            long diffInDays = diffInMillies / (1000 * 60 * 60 * 24);
+
+            // BookExpired 이벤트 생성 및 설정
+            BookExpired bookExpired = new BookExpired(this);
+            bookExpired.setExpireDays((int) diffInDays);  // 연체 일수 설정
+            bookExpired.setUserId(this.getUserId());      // userId 설정
+            bookExpired.setBookId(this.getBookId());      // bookId 설정
+            bookExpired.setQty(this.getQty());            // qty 설정
+
+            // BookExpired 이벤트 발행
+            bookExpired.publishAfterCommit();
+        }
     }
 
     public static ReturnRepository repository() {
