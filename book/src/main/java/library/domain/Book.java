@@ -28,11 +28,11 @@ public class Book {
 
     @PostPersist
     public void onPostPersist() {
-        StockIncreased stockIncreased = new StockIncreased(this);
-        stockIncreased.publishAfterCommit();
-
         StockDecreased stockDecreased = new StockDecreased(this);
         stockDecreased.publishAfterCommit();
+
+        StockIncreased stockIncreased = new StockIncreased(this);
+        stockIncreased.publishAfterCommit();
 
         OutOfStock outOfStock = new OutOfStock(this);
         outOfStock.publishAfterCommit();
@@ -53,8 +53,8 @@ public class Book {
         Book book = new Book();
         repository().save(book);
 
-        StockIncreased stockIncreased = new StockIncreased(book);
-        stockIncreased.publishAfterCommit();
+        StockDecreased stockDecreased = new StockDecreased(book);
+        stockDecreased.publishAfterCommit();
         OutOfStock outOfStock = new OutOfStock(book);
         outOfStock.publishAfterCommit();
         */
@@ -66,8 +66,8 @@ public class Book {
             book // do something
             repository().save(book);
 
-            StockIncreased stockIncreased = new StockIncreased(book);
-            stockIncreased.publishAfterCommit();
+            StockDecreased stockDecreased = new StockDecreased(book);
+            stockDecreased.publishAfterCommit();
             OutOfStock outOfStock = new OutOfStock(book);
             outOfStock.publishAfterCommit();
 
@@ -85,8 +85,8 @@ public class Book {
         Book book = new Book();
         repository().save(book);
 
-        StockDecreased stockDecreased = new StockDecreased(book);
-        stockDecreased.publishAfterCommit();
+        StockIncreased stockIncreased = new StockIncreased(book);
+        stockIncreased.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -96,8 +96,8 @@ public class Book {
             book // do something
             repository().save(book);
 
-            StockDecreased stockDecreased = new StockDecreased(book);
-            stockDecreased.publishAfterCommit();
+            StockIncreased stockIncreased = new StockIncreased(book);
+            stockIncreased.publishAfterCommit();
 
          });
         */
