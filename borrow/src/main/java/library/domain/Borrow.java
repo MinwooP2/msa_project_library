@@ -50,29 +50,15 @@ public class Borrow {
         bookBorrowed.publishAfterCommit();
     }
 
-    //<<< Clean Arch / Port Method
     public static void updateStatus(OutOfStock outOfStock) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Borrow borrow = new Borrow();
+        // outOfStock에서 전달된 bookId로 Borrow 엔티티를 찾습니다.
+        repository().findById(outOfStock.getBorrowId()).ifPresent(borrow -> {
+        // 해당 Borrow 엔티티의 status를 "canceled"로 변경합니다.
+        borrow.setStatus("canceled");
+        // 변경된 Borrow 엔티티를 저장합니다.
         repository().save(borrow);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(outOfStock.get???()).ifPresent(borrow->{
-            
-            borrow // do something
-            repository().save(borrow);
-
-
-         });
-        */
-
-    }
-    //>>> Clean Arch / Port Method
+    });
+}
 
 }
 //>>> DDD / Aggregate Root

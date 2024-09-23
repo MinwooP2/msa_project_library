@@ -62,7 +62,7 @@ public class Book {
             }else{
                 // 재고가 충분하지 않으면 차감하지 않고outOfStock 이벤트 publish 
                 OutOfStock outOfStock = new OutOfStock(book);
-                outOfStock.setBookId(bookBorrowed.getBookId());
+                outOfStock.setBorrowId(bookBorrowed.getId());
                 outOfStock.publishAfterCommit();
                 System.out.println("OutOfStock Event Published!!");
             }
