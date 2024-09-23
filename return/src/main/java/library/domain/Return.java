@@ -25,6 +25,8 @@ public class Return {
 
     private Date returnDate;
 
+    private Date expireDate;
+
     private Integer qty;
 
     @PostPersist

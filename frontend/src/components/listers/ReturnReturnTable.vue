@@ -70,6 +70,7 @@
                     { text: "userId", value: "userId" },
                     { text: "bookId", value: "bookId" },
                     { text: "returnDate", value: "returnDate" },
+                    { text: "expireDate", value: "expireDate" },
                     { text: "qty", value: "qty" },
                 ],
             return : [],
@@ -91,6 +92,7 @@
                 'userId': '',
                 'bookId': '',
                 'returnDate': '2024-09-23',
+                'expireDate': '2024-09-23',
                 'qty': 0,
             }
         },
