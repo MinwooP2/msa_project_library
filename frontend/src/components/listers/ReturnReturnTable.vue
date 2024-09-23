@@ -89,8 +89,8 @@
             this.values = temp.data._embedded.returns;
 
             this.newValue = {
-                'userId': '',
-                'bookId': '',
+                'userId': 0,
+                'bookId': 0,
                 'returnDate': '2024-09-23',
                 'expireDate': '2024-09-23',
                 'qty': 0,

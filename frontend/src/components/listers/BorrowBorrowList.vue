@@ -124,8 +124,8 @@
             this.values = temp.data._embedded.borrows;
             
             this.newValue = {
-                'userId': '',
-                'bookId': '',
+                'userId': 0,
+                'bookId': 0,
                 'borrowDate': '2024-09-23',
                 'expireDate': '2024-09-23',
                 'qty': 0,

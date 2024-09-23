@@ -12,8 +12,8 @@ import lombok.*;
 public class BookExpired extends AbstractEvent {
 
     private Long id;
-    private String userId;
-    private String bookId;
+    private Long userId;
+    private Long bookId;
     private Integer expireDays;
     private Integer qty;
 

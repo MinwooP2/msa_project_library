@@ -18,9 +18,9 @@ public class Borrow {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String userId;
+    private Long userId;
 
-    private String bookId;
+    private Long bookId;
 
     private Date borrowDate;
 
