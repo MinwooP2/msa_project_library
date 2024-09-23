@@ -19,6 +19,7 @@
             <String label="UserId" v-model="value.userId" :editMode="editMode" :inputUI="''"/>
             <String label="BookId" v-model="value.bookId" :editMode="editMode" :inputUI="''"/>
             <Date label="ReturnDate" v-model="value.returnDate" :editMode="editMode" :inputUI="''"/>
+            <Date label="ExpireDate" v-model="value.expireDate" :editMode="editMode" :inputUI="''"/>
             <Number label="Qty" v-model="value.qty" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 

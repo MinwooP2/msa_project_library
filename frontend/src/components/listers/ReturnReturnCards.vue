@@ -112,6 +112,7 @@
                 'userId': '',
                 'bookId': '',
                 'returnDate': '2024-09-23',
+                'expireDate': '2024-09-23',
                 'qty': 0,
             }
         },

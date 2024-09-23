@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.*;
 import library.BorrowApplication;
 import library.domain.BookBorrowed;
-import library.domain.Template;
 import lombok.Data;
 
 @Entity
@@ -35,9 +34,6 @@ public class Borrow {
     public void onPostPersist() {
         BookBorrowed bookBorrowed = new BookBorrowed(this);
         bookBorrowed.publishAfterCommit();
-
-        Template template = new Template(this);
-        template.publishAfterCommit();
     }
 
     public static BorrowRepository repository() {

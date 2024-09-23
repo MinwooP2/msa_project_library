@@ -15,6 +15,9 @@
                 <Date label="ReturnDate" v-model="item.returnDate" :editMode="editMode" @change="change" />
             </div>
             <div>
+                <Date label="ExpireDate" v-model="item.expireDate" :editMode="editMode" @change="change" />
+            </div>
+            <div>
                 <Number label="Qty" v-model="item.qty" :editMode="editMode" @change="change" />
             </div>
         </v-card-text>

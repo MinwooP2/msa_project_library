@@ -45,6 +45,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -52,6 +53,7 @@
                             [ UserId :  {{data.userId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ BookId :  {{data.bookId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ ReturnDate :  {{data.returnDate }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ ExpireDate :  {{data.expireDate }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Qty :  {{data.qty }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
@@ -123,6 +125,7 @@
                 'userId': '',
                 'bookId': '',
                 'returnDate': '2024-09-23',
+                'expireDate': '2024-09-23',
                 'qty': 0,
             }
         },
