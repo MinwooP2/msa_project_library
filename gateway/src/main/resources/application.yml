@@ -16,7 +16,7 @@ spring:
         - id: dashboard
           uri: http://localhost:8083
           predicates:
-            - Path=, 
+            - Path=/userInfos/**, 
         - id: return
           uri: http://localhost:8084
           predicates:
