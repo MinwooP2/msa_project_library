@@ -1,4 +1,4 @@
-<img width="925" alt="image" src="https://github.com/user-attachments/assets/4d8c4e0a-8b62-410e-92f8-290a5f5ecd3b"># 파이널 프로젝트 - Library Project
+# 파이널 프로젝트 - Library Project
 - 본 프로젝트는 MSA/DDD/Event Storming/EDA 를 포괄하는 분석/설계/구현/운영 전 단계를 커버하도록 구성한 프로젝트입니다.
 - 도서 등록, 대출, 반납, 내역 조회 등 도서관에서 사용하는 기본적인 도서 관리 시스템을 쿠버네티스 환경에서 MSA로 구현하였습니다. 
 
