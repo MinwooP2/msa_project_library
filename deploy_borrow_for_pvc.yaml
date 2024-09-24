@@ -1,0 +1,28 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: borrow
+  labels:
+    app: "borrow"
+spec:
+  selector:
+    matchLabels:
+      app: "borrow"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: "borrow"
+    spec:
+      containers:
+      - name: "borrow"
+        image: "minwoop/borrow:2"
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - mountPath: "/mnt/data"
+            name: volume
+      volumes:
+      - name: volume
+        persistentVolumeClaim:
+          claimName: azurefile
