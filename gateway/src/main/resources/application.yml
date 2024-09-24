@@ -56,7 +56,7 @@ spring:
         - id: dashboard
           uri: http://dashboard:8080
           predicates:
-            - Path=, 
+            - Path=/userInfos/**, 
         - id: return
           uri: http://return:8080
           predicates:

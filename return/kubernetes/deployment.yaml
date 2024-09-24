@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: return
-          image: "username/return:latest"
+          image: minwoop/return:1
           ports:
             - containerPort: 8080
           readinessProbe:

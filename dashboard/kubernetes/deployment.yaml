@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: dashboard
-          image: "username/dashboard:latest"
+          image: minwoop/dashboard:1
           ports:
             - containerPort: 8080
           readinessProbe:
