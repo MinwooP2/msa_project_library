@@ -1081,3 +1081,8 @@ CD 성공
 
 커밋 후 CI/CD 자동화
 
+![image](https://github.com/user-attachments/assets/33bbe969-0a6c-4c9d-8a95-70a2a518b785)
+
+쿠버네티스 환경에 배포된 것을 확인할 수 있음
+![image](https://github.com/user-attachments/assets/3d27b45e-7786-4f79-86ce-b9f2f979b8db)
+
