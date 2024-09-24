@@ -1,4 +1,4 @@
-# 파이널 프로젝트 - Library Project
+<img width="925" alt="image" src="https://github.com/user-attachments/assets/4d8c4e0a-8b62-410e-92f8-290a5f5ecd3b"># 파이널 프로젝트 - Library Project
 - 본 프로젝트는 MSA/DDD/Event Storming/EDA 를 포괄하는 분석/설계/구현/운영 전 단계를 커버하도록 구성한 프로젝트입니다.
 - 도서 등록, 대출, 반납, 내역 조회 등 도서관에서 사용하는 기본적인 도서 관리 시스템을 쿠버네티스 환경에서 MSA로 구현하였습니다. 
 
@@ -423,6 +423,30 @@ CD 성공
 
 <br>
 
+
+## Loggregation 
+
+Loki-stack을 이용해 book, borrow 서비스에 대한 로그리게이션 진행
+
+
+Helm으로 PLG 스텍 설치 및 Loki pod 생성 
+
+<img width="925" alt="image" src="https://github.com/user-attachments/assets/2e8283a7-ba92-4dbd-a299-441aa61b8d9c">
+
+
+통합 로깅 대상 서비스 설치
+
+<img width="925" alt="image" src="https://github.com/user-attachments/assets/e686a22c-9241-451c-a2f1-803c5e9de27d">
+
+
+Grafana External-IP 생성 후 접속
+
+<img width="823" alt="image" src="https://github.com/user-attachments/assets/9f09a013-41f3-46dd-b9e3-6ba8a9ab3bc4">
+
+
+
+Loki를 통해 book, borrow 서비스에 대한 로그 확인 
+<img width="1082" alt="image" src="https://github.com/user-attachments/assets/3ad03eab-c1f8-4b18-9864-cd3e42c22561">
 
 
 
