@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment  
 metadata:
   name: borrow
   labels:
@@ -16,22 +16,14 @@ spec:
     spec:
       containers:
         - name: borrow
-          image: minwoop/borrow:2
+          image: minwoop/borrow:1
           ports:
             - containerPort: 8080
-          readinessProbe:
+          readinessProbe: # 무정지 배포를 위한 readinessProbe 설정
             httpGet:
-              path: '/actuator/health'
+              path: '/borrows'
               port: 8080
             initialDelaySeconds: 10
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 10
-          livenessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 120
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 5
