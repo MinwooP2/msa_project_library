@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: book
-          image: minwoop/book:1
+          image: "user10.azurecr.io/book:latest"
           ports:
             - containerPort: 8080
           readinessProbe:
