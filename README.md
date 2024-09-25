@@ -210,7 +210,7 @@ kubectl autoscale deployment borrow  --cpu-percent=50 --min=1 --max=3
 
 <br>
 
-배포파일에 CPU 요청에 대한 값을 지정하고, 현재 배포된 주문서비스를 삭제하고 재배포한다.
+배포파일에 CPU 요청에 대한 값을 지정하고, 현재 배포된 borrow 서비스를 삭제하고 재배포한다.
 
 ![image](https://github.com/user-attachments/assets/74059ea7-0266-4c27-b8a8-20983acde5ca)
 
