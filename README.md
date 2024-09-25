@@ -59,10 +59,6 @@
 ## Event Storming 결과
 ![image](https://github.com/user-attachments/assets/3b9aea65-79dc-4b5e-a46b-49c2a859eef2)
 
-### flow 설명 
-
-- 사용자는 
-
 
 ## 클라우드, MSA 아키텍쳐 구성도
 ![image](https://github.com/user-attachments/assets/0cf7a6af-eda4-4d7c-8da7-013eab410005)
